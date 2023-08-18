@@ -13,30 +13,28 @@ export class App extends Component {
     positivePercentage: 0,
   };
 
-  handleClick = () => {
+  handleClick = type => {
     this.setState(prevState => {
       return {
-        good: prevState.good + 1,
+        [type]: prevState[type] + 1,
       };
     });
   };
 
   countTotalFeedback = () => {
-    console.log("1");
+
   };
 
   countPositiveFeedbackPercentage = () => {
-        console.log('2');
   };
 
   render() {
-
     const { good, neutral, bad, total, positivePercentage } = this.state;
     return (
       <Layout>
         <Section title="PLease leave feedback">
           <FeedbackOptions
-            options={this.countTotalFeedback}
+            options={this.handleClick}
             onLeaveFeedback={this.countPositiveFeedbackPercentage}
           />
         </Section>

@@ -1,10 +1,9 @@
-
-export const FeedbackOptions = () => {
+export const FeedbackOptions = ({ options }) => {
   return (
     <div>
-      <button>Good</button>
-      <button>Neutral</button>
-      <button>Bad</button>
+      <button onClick={() => options('good')}>Good</button>
+      <button onClick={() => options('neutral')}>Neutral</button>
+      <button onClick={() => options('bad')}>Bad</button>
     </div>
   );
 };
