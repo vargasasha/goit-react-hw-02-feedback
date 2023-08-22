@@ -1,9 +1,13 @@
-export const FeedbackOptions = ({ options }) => {
+export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
+
     <div>
-      <button onClick={() => options('good')}>Good</button>
-      <button onClick={() => options('neutral')}>Neutral</button>
-      <button onClick={() => options('bad')}>Bad</button>
+      {options.map(option => (
+        <button key={option} onClick={() => onLeaveFeedback(option)}>
+          {option}
+        </button>
+      ))}
     </div>
   );
+
 };
